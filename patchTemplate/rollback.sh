@@ -1,10 +1,10 @@
 #!/bin/bash
 clear
-patchVersion=2016.2.1
+patchVersion=
 patchName=patch-$patchVersion
 
 echo      "reverting for "$patchVersion
 
-cp -R --backup=none  backup/custom/ ../../
+cp -R --backup=none  backup/. ../
 
 echo      "revert done for "$patchVersion

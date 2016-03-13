@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-patchVersion=2016.2.1
+patchVersion=${patchVersion}
 patchName=patch-$patchVersion
 
 echo      "          |-----    |-------|    --------    --------  |       |"
@@ -19,9 +19,9 @@ echo      ""
 
 echo  [INFO] Debut d installation du patch $patchVersion 
 
-cp -R --backup=existing --suffix=__$patchName custom/ ../../
-find ../../custom/aushopping -name "*__$patchName" | xargs tar cvf - | (cd backup; tar xfp -)
-find ../../custom/aushopping -name "*__$patchName" | xargs rm
+cp -R --backup=existing --suffix=__$patchName source/. ../
+find ../ -name "*__$patchName" | xargs tar cvf - | (cd backup; tar xfp -)
+find ../ -name "*__$patchName" | xargs rm
 find backup -name "*_$patchName" |
 while read f
 do
