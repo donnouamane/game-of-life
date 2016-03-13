@@ -1,4 +1,5 @@
 set +x
+cd pageTemplate
 mkdir source
 mkdir backup
 export PATCH_VERSION="2016.1"
