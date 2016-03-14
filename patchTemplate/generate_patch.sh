@@ -9,5 +9,5 @@ cd ..
 PATCH_NAME=patch-$PATCH_VERSION
 mv patchTemplate $PATCH_NAME
 tar czvf $PATCH_NAME.tar.gz $PATCH_NAME
-rm -f $PATCH_NAME
+rm -rf $PATCH_NAME
 set +x
