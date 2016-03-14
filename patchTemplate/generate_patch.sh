@@ -6,6 +6,8 @@ sed -e "s/\${patchVersion}/$PATCH_VERSION/" install.sh > install_patch_$PATCH_VE
 sed -e "s/\${patchVersion}/$PATCH_VERSION/" rollback.sh > rollback_patch_$PATCH_VERSION.sh
 rm -f generate_patch.sh install.sh rollback.sh
 cd ..
-tar czvf patch-$PATCH_VERSION.tar.gz patchTemplate
-rm -f patchTemplate
+PATCH_NAME=patch-$PATCH_VERSION
+mv patchTemplate $PATCH_NAME
+tar czvf $PATCH_NAME.tar.gz $PATCH_NAME
+rm -f $PATCH_NAME
 set +x
