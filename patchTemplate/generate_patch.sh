@@ -5,8 +5,7 @@ sed -e "s/\${patchVersion}/$PATCH_VERSION/" install.sh > install_patch_$PATCH_VE
 sed -e "s/\${patchVersion}/$PATCH_VERSION/" rollback.sh > rollback_patch_$PATCH_VERSION.sh
 #set +x
 #insert source here
-commitArray = ($COMMITS)
-for variable in commitArray
+for variable in $COMMITS
 do
 echo "commit: $variable"
 done
