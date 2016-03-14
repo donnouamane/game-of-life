@@ -7,4 +7,4 @@ sed -e "s/\${patchVersion}/$PATCH_VERSION/" install.sh > install_patch_$PATCH_VE
 sed -e "s/\${patchVersion}/$PATCH_VERSION/" rollback.sh > rollback_patch_$PATCH_VERSION.sh
 rm -f generate_patch.sh install.sh rollback.sh
 cd ..
-mv patchTemplate patch-PATCH_VERSION
+mv patchTemplate patch-$PATCH_VERSION
