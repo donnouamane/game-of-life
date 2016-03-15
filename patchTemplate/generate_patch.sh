@@ -15,8 +15,8 @@ echo      ""  | tee -a ../release.txt
 for file in `ls`; do echo $(basename "$file" .tar); done | sort -n |
 while read f
 do
-    echo      ""
-    echo      ""
+    echo      "" | tee -a ../release.txt
+    echo      "" | tee -a ../release.txt
     git show -s --format=%B ${hashMap["$f"]} 2>&1 | tee -a ../release.txt
     tar -tf "$f.tar" >> ../release.txt
     tar xvf "$f.tar" && rm "$f.tar"
