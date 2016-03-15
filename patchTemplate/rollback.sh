@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-patchVersion=
+patchVersion=$PATCH_VERSION
 patchName=patch-$patchVersion
 
 echo      "reverting for "$patchVersion
