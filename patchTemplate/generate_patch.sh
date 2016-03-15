@@ -1,10 +1,15 @@
+#!/bin/bash
+mkdir patchTemplate/source
+mkdir patchTemplate/backup
+for commit in $COMMITS
+do
+key=$(git show -s --format=%ct $commit)
+git diff-tree -r --no-commit-id --name-only --diff-filter=ACMRT $commit | xargs git checkout $commit
+git diff-tree -r --no-commit-id --name-only --diff-filter=ACMRT $commit | xargs tar cvf patchTemplate/source/$key.tar --remove-files
+done
 cd patchTemplate
-mkdir source
-mkdir backup
 sed -e "s/\${patchVersion}/$PATCH_VERSION/" install.sh > install_patch_$PATCH_VERSION.sh
 sed -e "s/\${patchVersion}/$PATCH_VERSION/" rollback.sh > rollback_patch_$PATCH_VERSION.sh
-#set +x
-#insert source here
 for variable in $COMMITS
 do
 echo "commit: $variable"
