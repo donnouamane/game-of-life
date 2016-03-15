@@ -22,7 +22,7 @@ echo  [INFO] Debut d installation du patch $patchVersion
 cp -R --backup=existing --suffix=__$patchName source/. ../
 find ../ -name "*__$patchName" | xargs tar cvf - | (cd backup; tar xfp -)
 find ../ -name "*__$patchName" | xargs rm
-find backup -name "*_$patchName" |
+find backup -name "*__$patchName" |
 while read f
 do
     mv $f  ${f%__*}
